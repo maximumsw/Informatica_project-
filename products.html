@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+
+        background-image: url('/images/decorations/bg_img.webp');
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat; 
+    }
+
+    nav {
+            background-color: whitesmoke; /* Колір фону */
+            padding: 5px 10px; /* Внутрішній відступ */
+            border-radius: 8px; 
+            display: inline; /* Фон тільки під текстом */
+    }
+
+    h1,h2 {
+            background-color: whitesmoke; /* Колір фону */
+            padding: 5px 10px; /* Внутрішній відступ */
+            border-radius: 8px; 
+            display: inline; /* Фон тільки під текстом */
+    }
+
+    .highlight {
+            background-color: white; /* Колір фону */
+            padding: 5px 10px; /* Внутрішній відступ */
+            border-radius: 8px;  /* Фон тільки під текстом */
+        }
+</style>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hot_Wheels_Hub - Products</title>
+</head>
+<header>
+    <h1>Hot_Wheels_Hub</h1><br><br>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="products.html">Products</a> |
+        <a href="about.html">About Us</a> |
+        <a href="form.html">How to buy???</a>
+    </nav>
+    <hr>
+</header>
+
+<script>
+    function showCarGallery(id) {
+      // Отримуємо посилання на контейнер з вмістом
+      const mainContainer = document.getElementById("main");
+
+      // Очищаємо вміст (але header залишається!)
+      mainContainer.innerHTML = "";
+
+      // Створюємо таблицю
+      const table = document.createElement("table");
+      // Для прикладу, покажемо границі таблиці
+      table.setAttribute("border", "1");
+      table.setAttribute("align", "center");
+      // Створюємо один рядок
+      const row = document.createElement("tr");
+
+      // Три комірки: ліва, центральна, права
+      const leftCell = document.createElement("td");
+      const centerCell = document.createElement("td");
+      const rightCell = document.createElement("td");
+
+      // Створюємо три <img>
+      const leftImg = document.createElement("img");
+      leftImg.src = "images/decorations/logo_Hot-Wheels-Hub.webp";
+      leftImg.width = 250;
+      leftImg.alt = "Left Car";
+
+      const centerImg = document.createElement("img");
+      centerImg.src = "images/all_products/hotwheels_car"+id+"_0.jpg";
+      centerImg.width = 400;
+      centerImg.alt = "Center Car";
+
+      const rightImg = document.createElement("img");
+      rightImg.src = "images/all_products/hotwheels_car"+id+"_1.jpg";
+      rightImg.width = 250;
+      rightImg.alt = "Right Car";
+
+      // Функція swap для обміну src між двома зображеннями
+      function swapImages(img1, img2) {
+          const temp = img1.src;
+          img1.src = img2.src;
+          img2.src = temp;
+      }
+
+      // При кліку на ліве чи праве — міняємо місцями із центральним
+      leftImg.addEventListener("click", function() {
+          swapImages(leftImg, centerImg);
+      });
+      rightImg.addEventListener("click", function() {
+          swapImages(rightImg, centerImg);
+      });
+
+      // Додаємо зображення до їхніх клітинок
+      leftCell.appendChild(leftImg);
+      centerCell.appendChild(centerImg);
+      rightCell.appendChild(rightImg);
+
+      // Додаємо клітинки в рядок
+      row.appendChild(leftCell);
+      row.appendChild(centerCell);
+      row.appendChild(rightCell);
+
+      // Додаємо рядок у таблицю
+      table.appendChild(row);
+
+      // Вставляємо таблицю в mainContainer
+      mainContainer.appendChild(table);
+    }
+  </script>
+
+
+
+<div id="main">
+<body align="center">
+
+    
+    
+    <!-- Основний вміст сторінки -->
+    <section >
+        <br>
+        <h2>Our Hot Wheels 2025 STH Collection</h2>
+        
+        <!-- Таблиця 2x5: Ліва колонка – зображення товару, права – опис і ціна -->
+        <table border="1" align="center">
+            <!-- 1 -->
+            <tr id="1st_new_car">
+                <td>
+                    <img onclick="showCarGallery(1)" src="images/all_products/hotwheels_car1_0.jpg" alt="HW Car 1" width="200">
+                </td>
+                <td class="highlight">
+                    <strong>Hot Wheels Super Treasure Hunt: Model A</strong><br>
+                    Price: $9.99<br>
+                    Limited edition with premium wheels and special paint.
+                </td>
+            </tr>
+            <!-- 2 -->
+            <tr id="2nd_new_car">
+                <td>
+                    <img onclick="showCarGallery(2)" src="images/all_products/hotwheels_car2_0.jpg" alt="HW Car 2" width="200">
+                </td>
+                <td class="highlight">
+                    <strong>Hot Wheels Super Treasure Hunt: Model B</strong><br>
+                    Price: $12.50<br>
+                    Includes collector’s card and unique body design.
+                </td>
+            </tr>
+            <!-- 3 -->
+            <tr id="3rd_new_car">
+                <td>
+                    <img onclick="showCarGallery(3)" src="images/all_products/hotwheels_car3_0.jpg" alt="HW Car 3" width="200">
+                </td>
+                <td class="highlight">
+                    <strong>Hot Wheels Super Treasure Hunt: Model C</strong><br>
+                    Price: $10.00<br>
+                    Rubber tires, metallic finish, and exclusive packaging.
+                </td>
+            </tr>
+            <!-- 4 -->
+            <tr>
+                <td>
+                    <img onclick="showCarGallery(4)" src="images/all_products/hotwheels_car4_0.jpg" alt="HW Car 4" width="200">
+                </td>
+                <td class="highlight">
+                    <strong>Hot Wheels Super Treasure Hunt: Model D</strong><br>
+                    Price: $11.75<br>
+                    Special series release with limited run worldwide.
+                </td>
+            </tr>
+            <!-- 5 -->
+            <tr>
+                <td>
+                    <img onclick="showCarGallery(5)" src="images/all_products/hotwheels_car5_0.jpg" alt="HW Car 5" width="200">
+                </td>
+                <td class="highlight">
+                    <strong>Hot Wheels Super Treasure Hunt: Model E</strong><br>
+                    Price: $15.00<br>
+                    Rare chase car with unique paint variation.
+                </td>
+            </tr>
+        </table>
+    </section>
+</div>
+</body>
+</html>
